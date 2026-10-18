@@ -29,6 +29,15 @@ cp -R skills/pi-coding-agent ~/.codex/skills/
 cp -R skills/craft-agent-template ~/.codex/skills/
 ```
 
+On Windows, use PowerShell:
+
+```powershell
+$skillsDir = Join-Path $HOME ".codex\skills"
+New-Item -ItemType Directory -Path $skillsDir -Force | Out-Null
+Copy-Item -Path "skills\pi-coding-agent" -Destination $skillsDir -Recurse -Force
+Copy-Item -Path "skills\craft-agent-template" -Destination $skillsDir -Recurse -Force
+```
+
 Restart Codex after copying.
 
 ### Claude Code or other skill-compatible agents
